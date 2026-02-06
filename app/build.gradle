@@ -1,0 +1,36 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.fittrack"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.10.2'
+    implementation 'androidx.compose.ui:ui:1.5.0' // Compose UI
+    implementation 'androidx.compose.material3:material3:1.2.0' // Material3
+    implementation 'androidx.activity:activity-compose:1.7.0' // Activity for Compose
+    implementation 'androidx.room:room-runtime:2.6.0' // Room
+    kapt 'androidx.room:room-compiler:2.6.0' // Room compiler
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
